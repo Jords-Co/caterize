@@ -193,14 +193,19 @@
 @media only screen and (min-width: 992px) {
 
     /* Desktop Only */
-    .cta38_component:hover a {
-        color: var(--text-color--text-primary);
+
+    .cta38_component a h3:after {
+        left: 0;
+        transform: translate(0, -50%);
     }
 
-    .cta38_component:hover a:hover {
-        color: var(--base-color-system--red-500);
+    .cta38_component:hover a:hover h3 {
         border-color: var(--base-color-system--red-500);
         animation: growFont forwards var(--hover-animation-speed) ease;
+    }
+
+    .cta38_component:hover a:hover h3:after {
+        opacity: 1;
     }
 }
 
@@ -304,6 +309,7 @@ blockquote:before {
 /* Pseudo Text */
 .is-pseudo-text {
     position: relative;
+    overflow: hidden;
 }
 
 .is-pseudo-text:after {

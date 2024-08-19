@@ -4,7 +4,7 @@
  * @author <cabal@digerati.design>
  */
 export const populateDataAttributeHoverText = () => {
-    const elements = document.querySelectorAll('.is-pseudo-text');
+    const elements = document.querySelectorAll('[dd-label]');
     if (!elements) {
         return;
     }
