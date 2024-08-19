@@ -9,7 +9,9 @@ export const populateDataAttributeHoverText = () => {
         return;
     }
     elements.forEach((element) => {
-        let labelText = element.innerText;
+        let targetElement = element.classList.contains('is-heading-highlight') ? element.previousSibling : element,
+            labelText = targetElement.innerText;
+        console.log(labelText);
         element.setAttribute('dd-label', labelText);
     });
 };

@@ -189,6 +189,24 @@
     }
 }
 
+/* Layout121 Timeline Highlight */
+.layout121_heading-wrapper {
+    position: relative;
+}
+
+.is-heading-highlight {
+    opacity: 0;
+}
+
+.is-heading-highlight:after {
+    position: absolute;
+    z-index: 2;
+    content: attr(dd-label);
+    color: transparent;
+    background-image: var(--caterize-gradient);
+    background-clip: text;
+}
+
 /* Alternate CTA Hover */
 @media only screen and (min-width: 992px) {
 
@@ -310,6 +328,7 @@ blockquote:before {
 .is-pseudo-text {
     position: relative;
     overflow: hidden;
+    transition: all var(--hover-animation-speed) ease;
 }
 
 .is-pseudo-text:after {
@@ -326,6 +345,10 @@ blockquote:before {
     transition: opacity var(--hover-animation-speed) ease;
 }
 
+.is-pseudo-text:hover {
+    opacity: 1;
+}
+
 .is-pseudo-text:hover:after {
     opacity: 1;
 }
@@ -339,10 +362,11 @@ blockquote:before {
 
 /* Navbar Current Page State */
 .navbar1_link.w--current {
-    cursor: default;
     color: transparent;
     background-image: var(--caterize-gradient);
     background-clip: text;
+    opacity: 1;
+    cursor: default;
 }
 
 /* Navbar Link Hover State */
@@ -403,12 +427,6 @@ blockquote:before {
 .footer3_link:hover:before {
     opacity: 1;
 }
-
-/*
-.footer3_link.is-pseudo-text:after {
-    padding: 0.5rem 0;
-}
-    */
 
 /* First Section Padding for Macbook and smaller dimensions */
 @media only screen and (min-height: 900px) {
