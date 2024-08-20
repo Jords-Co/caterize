@@ -1,9 +1,9 @@
 /**
- * Populate Data Attribute Hover Text.
+ * Populate Data Attribute with Element Text.
  * 
  * @author <cabal@digerati.design>
  */
-export const populateDataAttributeHoverText = () => {
+export const populateDataAttributeWithElementText = () => {
     const elements = document.querySelectorAll('[dd-label]');
     if (!elements) {
         return;
@@ -11,7 +11,6 @@ export const populateDataAttributeHoverText = () => {
     elements.forEach((element) => {
         let targetElement = element.classList.contains('is-heading-highlight') ? element.previousSibling : element,
             labelText = targetElement.innerText;
-        console.log(labelText);
         element.setAttribute('dd-label', labelText);
     });
 };

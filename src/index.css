@@ -15,16 +15,6 @@
     }
 }
 
-@keyframes growFont {
-    0% {
-        font-variation-settings: 'wght' 500
-    }
-
-    100% {
-        font-variation-settings: 'wght' 700
-    }
-}
-
 /* CSS Only Marquee with pause on hover */
 .logo3_container .logo3_component {
     animation: scrollPartnerLogos 25s linear infinite;
@@ -208,18 +198,42 @@
 }
 
 /* Alternate CTA Hover */
+.cta38_component a h3:after {
+    display: none;
+}
+
 @media only screen and (min-width: 992px) {
 
     /* Desktop Only */
+    .cta38_component a h3 {
+        font-variation-settings: 'wght' 500;
+    }
 
     .cta38_component a h3:after {
+        display: block;
         left: 0;
         transform: translate(0, -50%);
     }
 
+    .cta38_component a .cta38_link-divider:after {
+        content: '';
+        position: absolute;
+        top: 0;
+        left: 0;
+        right: 0;
+        bottom: 0;
+        z-index: 1;
+        opacity: 0;
+        background-image: var(--caterize-gradient);
+        transition: opacity var(--hover-animation-speed) ease;
+    }
+
+    .cta38_component:hover a:hover .cta38_link-divider:after {
+        opacity: 1;
+    }
+
     .cta38_component:hover a:hover h3 {
-        border-color: var(--base-color-system--red-500);
-        animation: growFont forwards var(--hover-animation-speed) ease;
+        font-variation-settings: 'wght' 700;
     }
 
     .cta38_component:hover a:hover h3:after {
@@ -327,7 +341,6 @@ blockquote:before {
 /* Pseudo Text */
 .is-pseudo-text {
     position: relative;
-    overflow: hidden;
     transition: all var(--hover-animation-speed) ease;
 }
 
@@ -396,12 +409,6 @@ blockquote:before {
 .navbar1_link:not(.w--current):hover+.navbar1_hover {
     opacity: 1;
 }
-
-/*
-.navbar1_link.is-pseudo-text:after {
-    padding: 1.5rem 1rem;
-}
-    */
 
 /* Footer Link Hover State */
 .footer3_link {
