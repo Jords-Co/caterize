@@ -215,6 +215,10 @@
         transform: translate(0, -50%);
     }
 
+    .cta38_component a .cta38_link-text-small {
+        transition: color var(--hover-animation-speed) ease;
+    }
+
     .cta38_component a .cta38_link-divider:after {
         content: '';
         position: absolute;
@@ -226,6 +230,10 @@
         opacity: 0;
         background-image: var(--caterize-gradient);
         transition: opacity var(--hover-animation-speed) ease;
+    }
+
+    .cta38_component:hover a:hover .cta38_link-text-small {
+        color: var(--link-color--link-primary);
     }
 
     .cta38_component:hover a:hover .cta38_link-divider:after {
@@ -339,75 +347,77 @@ blockquote:before {
 }
 
 /* Pseudo Text */
-.is-pseudo-text {
-    position: relative;
-    transition: all var(--hover-animation-speed) ease;
+@media only screen and (min-width: 992px) {
+    .is-pseudo-text {
+        position: relative;
+        transition: all var(--hover-animation-speed) ease;
+    }
+
+    .is-pseudo-text:after {
+        position: absolute;
+        top: 50%;
+        left: 50%;
+        z-index: 2;
+        content: attr(dd-label);
+        color: transparent;
+        background-image: var(--caterize-gradient);
+        background-clip: text;
+        opacity: 0;
+        transform: translate(-50%, -50%);
+        transition: opacity var(--hover-animation-speed) ease;
+    }
+
+    .is-pseudo-text:hover:after {
+        opacity: 1;
+    }
 }
 
-.is-pseudo-text:after {
-    position: absolute;
-    top: 50%;
-    left: 50%;
-    z-index: 2;
-    content: attr(dd-label);
-    color: transparent;
-    background-image: var(--caterize-gradient);
-    background-clip: text;
-    opacity: 0;
-    transform: translate(-50%, -50%);
-    transition: opacity var(--hover-animation-speed) ease;
-}
 
-.is-pseudo-text:hover {
-    opacity: 1;
-}
+/* Navbar Hover / Current Page States */
 
-.is-pseudo-text:hover:after {
-    opacity: 1;
-}
-
-/* Navbar Hover State */
-.navbar1_link {
-    position: relative;
-    color: var(--link-color--link-primary);
-    transition: color var(--hover-animation-speed) ease;
-}
-
-/* Navbar Current Page State */
 .navbar1_link.w--current {
     color: transparent;
     background-image: var(--caterize-gradient);
     background-clip: text;
-    opacity: 1;
     cursor: default;
 }
 
-/* Navbar Link Hover State */
-.navbar1_link:not(.w--current):before {
-    position: absolute;
-    content: '';
-    left: 50%;
-    bottom: -0.75rem;
-    width: 2.625rem;
-    height: 1.5rem;
-    background-image: radial-gradient(50% 50% at 50% 50%, rgba(195, 38, 45, 0.32) 0%, rgba(250, 112, 46, 0.32) 100%);
-    opacity: 0;
-    z-index: -1;
-    opacity: 0;
-    transform: translateX(-50%);
-    transition: opacity var(--hover-animation-speed) ease;
-    filter: blur(0.98181819915rem);
-}
 
-.navbar1_link+.navbar1_hover {
-    opacity: 0;
-    background-image: var(--caterize-gradient);
-    transition: color var(--hover-animation-speed) ease;
-}
+@media only screen and (min-width: 992px) {
+    .navbar1_link {
+        position: relative;
+        color: var(--link-color--link-primary);
+        transition: color var(--hover-animation-speed) ease;
+    }
 
-.navbar1_link:not(.w--current):hover:before,
-.navbar1_link:not(.w--current):hover+.navbar1_hover {
-    opacity: 1;
+    /* Navbar Link Hover State */
+    .navbar1_link:not(.w--current):before {
+        position: absolute;
+        content: '';
+        display: block;
+        left: 50%;
+        bottom: -0.75rem;
+        width: 2.625rem;
+        height: 1.5rem;
+        background-image: radial-gradient(50% 50% at 50% 50%, rgba(195, 38, 45, 0.32) 0%, rgba(250, 112, 46, 0.32) 100%);
+        opacity: 0;
+        z-index: -1;
+        opacity: 0;
+        transform: translateX(-50%);
+        transition: opacity var(--hover-animation-speed) ease;
+        filter: blur(0.98181819915rem);
+    }
+
+    .navbar1_link+.navbar1_hover {
+        opacity: 0;
+        background-image: var(--caterize-gradient);
+        transition: color var(--hover-animation-speed) ease;
+    }
+
+    .navbar1_link:not(.w--current):hover:before,
+    .navbar1_link:not(.w--current):hover+.navbar1_hover {
+        opacity: 1;
+    }
 }
 
 /* Footer Link Hover State */

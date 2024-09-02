@@ -13,4 +13,5 @@ export const populateDataAttributeWithElementText = () => {
             labelText = targetElement.innerText;
         element.setAttribute('dd-label', labelText);
     });
+
 };

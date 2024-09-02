@@ -6,6 +6,9 @@
     "paths": {
       "$digerati/*": [
         "src/digerati/*"
+      ],
+      "$caterize/*": [
+        "src/caterize/*"
       ]
     },
     "types": [
